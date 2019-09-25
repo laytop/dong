@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
+	<title>列表</title>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<!--选择-->
+		<van-row>
+			<van-col span="12">
+				<van-dropdown-menu>
+					<van-dropdown-item v-model="value1" :options="option1" ></van-dropdown-item>
+					<van-dropdown-item v-model="value2" :options="option2" ></van-dropdown-item>
+				</van-dropdown-menu>
+			</van-col>
+		</van-row>
+
+		<!--列表-->
+		<van-row>
+			<van-col span="24">
+				<van-grid :border="false" :column-num="2" :gutter="10">
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+					<van-grid-item>
+						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />
+						<span style="font-size: 0.2rem;margin-top: 0.2rem;color: #ff8423;">iphone 11</span>
+						<span style="font-size: 0.2rem;">价格：面议</span>
+					</van-grid-item>
+				</van-grid>
+
+			</van-col>
+		</van-row>
+
+
+		<van-row>
+			<van-col span="11"></van-col>
+			<van-col span="2">
+				<van-loading type="spinner" color="#1989fa" />
+			</van-col>
+			<van-col span="11"></van-col>
+		</van-row>
+
+		<div style="margin-bottom: 1rem"></div>
+
+
+		<!--导航-->
+		<van-row>
+			<van-col span="24">
+				<van-tabbar
+						v-model="active"
+						active-color="#07c160"
+						inactive-color="#000"
+				>
+					<van-tabbar-item icon="home-o">标签</van-tabbar-item>
+					<van-tabbar-item icon="search">标签</van-tabbar-item>
+					<van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+				</van-tabbar>
+			</van-col>
+		</van-row>
+	</div>
+
+
+	<script type="text/javascript">
+		(function (doc, win) {
+			var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function () {
+						var clientWidth = docEl.clientWidth;
+						if (!clientWidth) return;
+						if (clientWidth >= 720) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+						}
+					};
+
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+	<script>
+	new Vue({
+		el:"#app",
+		data:{
+			active:0,
+			value1: 0,
+			value2: 'a',
+			option1: [
+				{ text: '全部商品', value: 0 },
+				{ text: '新款商品', value: 1 },
+				{ text: '活动商品', value: 2 }
+			],
+			option2: [
+				{ text: '默认排序', value: 'a' },
+				{ text: '好评排序', value: 'b' },
+				{ text: '销量排序', value: 'c' },
+			],
+		},
+		 methods: {
+
+  		}
+	})
+	
+</script>
+</body>
+</html>

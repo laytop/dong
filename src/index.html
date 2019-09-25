@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
+    <title>首页</title>
+</head>
+
+<body>
+<div ></div>
+    <div id="app">
+        <!--轮播-->
+        <van-row>
+            <van-col span="24">
+                <van-swipe :autoplay="3000">
+                    <van-swipe-item v-for="(image, index) in images" :key="index">
+                        <img v-lazy="image" :src="image" style="width: 100%;" />
+                    </van-swipe-item>
+                </van-swipe>
+            </van-col>
+        </van-row>
+
+        <!--图片-->
+        <van-row>
+            <van-col span="24">
+                <van-grid :border="false" :column-num="3">
+                    <van-grid-item>
+                        <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+                    </van-grid-item>
+                    <van-grid-item>
+                        <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+                    </van-grid-item>
+                    <van-grid-item>
+                        <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+                    </van-grid-item>
+                </van-grid>
+            </van-col>
+        </van-row>
+
+        <!--商品-->
+        <van-row>
+            <van-col span="24">
+                <van-tabs>
+                    <van-tab v-for="index in 8" :title="'标签 ' + index">
+                        <van-grid :border="false" :column-num="2" :gutter="10">
+                            <van-grid-item>
+                                <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+                            </van-grid-item>
+                            <van-grid-item>
+                                <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+                            </van-grid-item>
+                            <van-grid-item>
+                                <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+                            </van-grid-item>
+                            <van-grid-item>
+                                <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+                            </van-grid-item>
+                            <van-grid-item>
+                                11111
+                            </van-grid-item>
+                        </van-grid>
+                    </van-tab>
+                </van-tabs>
+            </van-col>
+        </van-row>
+
+        <van-row>
+            <van-col span="11"></van-col>
+            <van-col span="2">
+                <van-loading type="spinner" color="#1989fa" />
+            </van-col>
+            <van-col span="11"></van-col>
+        </van-row>
+
+        <div style="margin-bottom: 1rem"></div>
+
+        <!--导航-->
+        <van-row>
+            <van-col span="24">
+                <van-tabbar
+                        v-model="active"
+                        active-color="#07c160"
+                        inactive-color="#000"
+                >
+                    <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+                    <van-tabbar-item icon="search">标签</van-tabbar-item>
+                    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+                </van-tabbar>
+            </van-col>
+        </van-row>
+
+    </div>
+
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 720) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                images: [
+                    'https://img.yzcdn.cn/vant/apple-1.jpg',
+                    'https://img.yzcdn.cn/vant/apple-2.jpg',
+                ],
+                active:0,
+            },
+            methods: {
+
+            },
+            created: function () {
+
+            },
+            mounted: function () {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
