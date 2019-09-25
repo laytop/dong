@@ -8,6 +8,13 @@
 </head>
 <body>
 	<div id="app" v-cloak>
+		<van-row>
+			<van-col span="24">
+				<van-nav-bar
+						left-text="改装案例"
+				/>
+			</van-col>
+		</van-row>
 		<!--选择-->
 		<van-row>
 			<van-col span="12">
@@ -21,6 +28,7 @@
 		<!--列表-->
 		<van-row>
 			<van-col span="24">
+
 				<van-grid :border="false" :column-num="2" :gutter="10">
 					<van-grid-item>
 						<img src="https://img.yzcdn.cn/vant/apple-1.jpg" width="100%" />

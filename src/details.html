@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
+    <title>详情</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            font-size: 0.3rem;
+            padding-left: 0.1rem;
+            margin-bottom: 0.2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <van-row>
+        <van-col span="24">
+            <van-nav-bar
+                    left-text="返回"
+                    left-arrow
+            />
+        </van-col>
+    </van-row>
+    <van-row>
+        <van-col span="12">
+                <van-image
+                        width="100%"
+                        height="100%"
+                        src="https://img.yzcdn.cn/vant/cat.jpeg"
+                />
+        </van-col>
+        <van-col span="12">
+            <p>日产奇骏前座电动座椅改装套餐</p>
+            <p>价格：面议</p>
+            <p>联系人：赖先生</p>
+            <p>手机：13775278661 <van-icon name="phone-circle" /> </p>
+        </van-col>
+    </van-row>
+
+    <van-row>
+        <van-col span="24">
+            商品详情请咨询客服
+        </van-col>
+    </van-row>
+
+    <van-row>
+        <van-col span="24">
+            <van-grid :border="false" :column-num="1">
+                <van-grid-item>
+                    <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+                </van-grid-item>
+                <van-grid-item>
+                    <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+                </van-grid-item>
+                <van-grid-item>
+                    <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+                </van-grid-item>
+            </van-grid>
+        </van-col>
+    </van-row>
+
+    <div style="margin-bottom: 1rem;"></div>
+    <van-button icon="share" type="primary" size="large" style="position: fixed;bottom: 0;">分享</van-button>
+</div>
+
+
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 720) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+        },
+        methods: {
+
+        }
+    })
+
+</script>
+</body>
+</html>
